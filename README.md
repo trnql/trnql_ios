@@ -19,4 +19,4 @@ Please see our website for guides, documentation, and the API Reference [cicking
 
 ## License
 
-trnql is available under the MIT license. See the LICENSE file for more info. 
+trnql is available under a custom license. See the LICENSE file for more info. 
