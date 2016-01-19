@@ -2,12 +2,12 @@ Pod::Spec.new do |s|
 
     s.name         = "trnql"
     s.platform     = :ios, "8.0"
-    s.version      = "1.6.2"
+    s.version      = "1.6.3"
     s.summary      = "Easily integrate 'contextual awareness' from sensors, phone data & cloud services into engaging applications"
     s.homepage     = "http://trnql.com/"
     s.license      = { :type => "Copyright (C) 2015 trnql, Inc.", :file => "LICENSE" }
     s.author       = "trnql"
-    s.source       = { :git => "https://github.com/trnql/trnql_ios.git", :tag => "1.6.2" }
+    s.source       = { :git => "https://github.com/trnql/trnql_ios.git", :tag => "1.6.3" }
     s.vendored_frameworks = 'Frameworks/trnql.framework'
     s.requires_arc = true
 
