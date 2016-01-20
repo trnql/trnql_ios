@@ -1,0 +1,6 @@
+framework module Pods_trnql_Interplay {
+  umbrella header "Pods-trnql Interplay-umbrella.h"
+
+  export *
+  module * { export * }
+}

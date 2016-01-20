@@ -15,8 +15,8 @@ end
 
 ## Guides
 
-Please see our website for guides, documentation, and the API Reference by [clicking here](http://trnql.com/guides-ios/).
+For guides, documentation, and the API Reference, please see our [website](http://trnql.com/guides-ios/).
 
 ## License
 
-trnql is available under a custom license. See the LICENSE file for more info. 
+For licensing information, please see our [Terms of Service](http://trnql.com/download/EvaluationTermsofService.pdf)
