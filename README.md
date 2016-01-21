@@ -1,19 +1,15 @@
-# IMPORTANT NOTE!
-
-This pod has been deprecated as of January 21, 2016 as trnql is no longer available via the CocoaPods trunk.
-
-To install the updated, non-deprecated version of trnql, please see the instructions below.
+# trnql
 
 ## Installation
 
-trnql is still available through CocoaPods, just not the CocoaPods trunk. Install trnql by adding it to your Podfile and supplying the direct URL to the GitHub repo where it is hosted:
+trnql is available through [CocoaPods](http://cocoapods.org). Install trnql by adding it to your Podfile:
 
 ```ruby
 platform :ios, '8.0'
 use_frameworks!
 
 target 'MyApp' do
-    pod 'trnql', :git => 'https://github.com/trnql/trnql_ios.git'
+	pod 'trnql'
 end
 ```
 

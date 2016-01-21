@@ -1,0 +1,10 @@
+framework module trnql {
+  umbrella header "trnql.h"
+
+  export *
+  module * { export * }
+}
+
+module trnql.Swift {
+    header "trnql-Swift.h"
+}
