@@ -1,1 +1,0 @@
-../../../../../../trnql/trnql.framework/Headers/trnql-Swift.h
