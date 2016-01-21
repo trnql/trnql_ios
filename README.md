@@ -2,14 +2,14 @@
 
 ## Installation
 
-trnql is available through [CocoaPods](http://cocoapods.org). Install trnql by adding it to your Podfile:
+trnql is available through CocoaPods using the direct link to this repo. Install trnql by adding it to your Podfile and supplying the direct URL to this GitHub repo:
 
 ```ruby
 platform :ios, '8.0'
 use_frameworks!
 
 target 'MyApp' do
-	pod 'trnql'
+	pod 'trnql', :git => 'https://github.com/trnql/trnql_ios.git'
 end
 ```
 
