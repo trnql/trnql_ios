@@ -3,7 +3,7 @@
   "platforms": {
     "ios": "8.0"
   },
-  "version": "1.6.4",
+  "version": "1.8",
   "summary": "Easily integrate 'contextual awareness' from sensors, phone data & cloud services into engaging applications",
   "homepage": "http://trnql.com/",
   "license": {
@@ -13,7 +13,7 @@
   "authors": "trnql",
   "source": {
     "git": "https://github.com/trnql/trnql_ios.git",
-    "tag": "1.6.4"
+    "tag": "1.8"
   },
   "vendored_frameworks": "trnql/trnql.framework",
   "requires_arc": true

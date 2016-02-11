@@ -1,6 +1,6 @@
 platform :ios, '8.0'
 use_frameworks!
 
-target 'trnql Interplay', :exclusive => true do
+target 'trnql Interplay' do
 	pod "trnql", :path => "../"
 end

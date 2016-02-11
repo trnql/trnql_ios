@@ -88,6 +88,7 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #if defined(__has_feature) && __has_feature(modules)
 @import ObjectiveC;
 @import Foundation;
+@import CoreMotion;
 @import CoreLocation;
 #endif
 
@@ -201,6 +202,10 @@ SWIFT_CLASS("_TtC5trnql12AddressEntry")
 
 /// :nodoc:
 - (void)encodeWithCoder:(NSCoder * __nonnull)coder;
+@end
+
+
+@interface CMMotionActivity (SWIFT_EXTENSION(trnql))
 @end
 
 
@@ -596,6 +601,109 @@ SWIFT_CLASS("_TtC5trnql13SmartActivity")
 @end
 
 
+SWIFT_CLASS("_TtC5trnql12SmartAddress")
+@interface SmartAddress : NSObject
+
+/// Boolean indidicating whether or not the SmartAddress service is running.
++ (BOOL)isEnabled;
++ (void)setIsEnabled:(BOOL)value;
+
+/// Starts the SmartAddress service.
+///
+/// Changes in address are sent to the delegate in the form of an <code>AddressEntry
+/// </code> object.
++ (void)start;
+
+/// Stops the SmartAddress service.
++ (void)stop;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5trnql16SmartFileManager")
+@interface SmartFileManager : NSObject
+
+/// Gets an object from persistence using a given key.
+///
+/// \returns  The object if it exists, <code>nil
+/// </code> otherwise.
++ (id __nullable)objectFromPersistenceForKey:(NSString * __nonnull)key;
+
+/// Removes an object from persistence using a given key.
+///
+/// \returns  True if successful, false otherwise.
++ (BOOL)removeObjectFromPersistenceForKey:(NSString * __nonnull)key;
+
+/// Saves an object to persistence using a given filename, folder, and optional subdirectory.\Note 
+///
+/// You do not need to include leading or trailing slashes in <code>subDirectory
+/// </code>
+///
+/// \param object The object to be persisted.
+///
+/// \param filename The filename.
+///
+/// \param root The root folder name.
+///
+/// \param subDirectory The subdirectory file path relative to <code>root
+/// </code>.
+///
+/// \param backupsAllowed Whether or not the object should be included in iCloud/iTunes backups.
+///
+/// \returns  True if successful, false otherwise.
++ (BOOL)persistObject:(id <NSCoding> __nonnull)object named:(NSString * __nonnull)filename toRootFolder:(NSSearchPathDirectory)root withSubDirectory:(NSString * __nullable)subDirectory backupsAllowed:(BOOL)backupsAllowed;
+
+/// Gets an object from persistence using a given filename, folder, and optional subdirectory.\Note 
+///
+/// You do not need to include leading or trailing slashes in <code>subDirectory
+/// </code>
+///
+/// \param filename The filename.
+///
+/// \param root The root folder name.
+///
+/// \param subDirectory The subdirectory file path relative to <code>root
+/// </code>.
+///
+/// \returns  The object if it exists, <code>nil
+/// </code> otherwise.
++ (id __nullable)objectFromPersistenceWithNamed:(NSString * __nonnull)filename rootFolder:(NSSearchPathDirectory)rootFolder subDirectory:(NSString * __nullable)subDirectory;
+
+/// Removes an object from persistence using a given filename, folder, and optional subdirectory.\Note 
+///
+/// You do not need to include leading or trailing slashes in <code>subDirectory
+/// </code>
+///
+/// \param filename The filename.
+///
+/// \param root The root folder name.
+///
+/// \param subDirectory The subdirectory file path relative to <code>root
+/// </code>.
+///
+/// \returns  True if successful, false otherwise.
++ (BOOL)removeObjectFromPersistenceWithNamed:(NSString * __nonnull)filename rootFolder:(NSSearchPathDirectory)rootFolder subDirectory:(NSString * __nullable)subDirectory;
+
+/// Sets whether or not the object for a given filename, folder, and optional subdirectory should be included in iCloud/iTunes backups.\Note 
+///
+/// You do not need to include leading or trailing slashes in <code>subDirectory
+/// </code>
+///
+/// \param allowed Whether or not the object should be included in iCloud/iTunes backups.
+///
+/// \param filename The filename.
+///
+/// \param root The root folder name.
+///
+/// \param subDirectory The subdirectory file path relative to <code>root
+/// </code>.
+///
+/// \returns  True if successful, false otherwise.
++ (BOOL)setBackupsAllowed:(BOOL)allowed forItemNamed:(NSString * __nonnull)filename rootFolder:(NSSearchPathDirectory)rootFolder subDirectory:(NSString * __nullable)subDirectory;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 
 /// The SmartLocation service.
 SWIFT_CLASS("_TtC5trnql13SmartLocation")
@@ -607,10 +715,32 @@ SWIFT_CLASS("_TtC5trnql13SmartLocation")
 /// A Boolean indicating whether or not authorization has been granted for location monitoring.
 + (BOOL)isAuthorizedForLocationMonitoring;
 
+/// The minimum distance (measured in meters) a device must move horizontally before an update event is generated. This distance is measured relative to the previously delivered location. The default value (-1.0) is used to be notified of all movements. Source: Apple
++ (double)desiredDistanceFilter;
++ (void)setDesiredDistanceFilter:(double)newValue;
+
+/// The accuracy of the location data (meters).
++ (double)desiredLocationAccuracy;
++ (void)setDesiredLocationAccuracy:(double)newValue;
+
+/// The accuracy of the location data (meters) when the user is stationary. This value is only used when automaticallyAdjustLocationAccuracy is true. The default value (100.0) provides results accurate to within 100 meters.
++ (double)desiredLocationAccuracyWhenStationary;
++ (void)setDesiredLocationAccuracyWhenStationary:(double)newValue;
+
+/// The accuracy of the location data (meters) when the user is not stationary. This value is only used when automaticallyAdjustLocationAccuracy is true. The default value (-1.0) provides the best possible accuracy.
++ (double)desiredLocationAccuracyWhenNonStationary;
++ (void)setDesiredLocationAccuracyWhenNonStationary:(double)newValue;
+
+/// Boolean indicating whether or not the location accuracy should be automatically determined. This can only be set to true iff SmartActivity is enabled.
++ (BOOL)automaticallyAdjustLocationAccuracy;
++ (void)setAutomaticallyAdjustLocationAccuracy:(BOOL)newValue;
+
+/// The last reported location
++ (CLLocation * __nullable)lastReportedLocation;
+
 /// Start the SmartLocation service.
 ///
-/// Changes in location are sent to the delegate in the form of an <code>AddressEntry
-/// </code> object and <code>LocationEntry
+/// Changes in location are sent to the delegate in the form of a <code>LocationEntry
 /// </code> object.
 ///
 /// Location monitoring will begin immediately after the user has granted authorization; there is no need to stop and restart the service.
@@ -621,6 +751,9 @@ SWIFT_CLASS("_TtC5trnql13SmartLocation")
 
 /// Stop the SmartLocation service.
 + (void)stop;
+
+/// Request the user's current location using the highest possible accuracy. The result will be delivered to the delegate's smartLocationChange(_:_:) method
++ (void)requestLocation;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -729,8 +862,9 @@ SWIFT_CLASS("_TtC5trnql12SmartWeather")
 /// trnql is an SDK that makes iOS apps smarter in minutes. Quickly and effortlessly get activity, address & location, POI, and weather updates with just a few lines of code.
 SWIFT_CLASS("_TtC5trnql5Trnql")
 @interface Trnql : NSObject <CLLocationManagerDelegate>
-+ (Trnql * __nonnull)sharedInstance;
 
+/// REQUIRES iOS 9 OR GREATER
+///
 /// Sets whether or not the application requires background execution.
 ///
 /// By default (<code>requiresBackgroundExecution = false
@@ -771,6 +905,9 @@ SWIFT_CLASS("_TtC5trnql5Trnql")
 
 /// Prints the status of and current information about trnql components including API Key, Background Execution, SmartActivity, SmartLocation, SmartPeople, SmartPlaces, and SmartWeather.
 + (void)getStatus;
+
+/// Prints the status of and current information about trnql components including API Key, Background Execution, SmartActivity, SmartLocation, SmartPeople, SmartPlaces, and SmartWeather.
++ (void)status;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -778,7 +915,7 @@ SWIFT_CLASS("_TtC5trnql5Trnql")
 @class WeatherEntry;
 
 
-/// The TrnqlDelegate protocol defines the methods used to receive SmartActivity, SmartAddress, SmartLocation, SmartPlaces, and SmartWeather updates from the Trnql.sharedInstance object.
+/// The TrnqlDelegate protocol defines the methods used to receive SmartActivity, SmartAddress, SmartLocation, SmartPlaces, SmartWeather, ObservableProperties, and PersistentObservableProperties updates.
 SWIFT_PROTOCOL("_TtP5trnql13TrnqlDelegate_")
 @protocol TrnqlDelegate
 @optional
@@ -830,6 +967,13 @@ SWIFT_PROTOCOL("_TtP5trnql13TrnqlDelegate_")
 ///
 /// \param error The error object containing the reason the weather could not be retrieved.
 - (void)smartWeatherChange:(WeatherEntry * __nullable)weather error:(NSError * __nullable)error;
+
+/// Tells the delegate that an observed property has been changed.
+///
+/// \param object The newly changed object.
+///
+/// \param key The key of the object being observed.
+- (void)observablePropertyChange:(id __nullable)object key:(NSString * __nonnull)key;
 @end
 
 
