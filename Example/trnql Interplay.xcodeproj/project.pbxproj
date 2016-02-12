@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0AE8B5F61CDCA27D2A168640 /* Pods_trnql_Interplay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375AAD9124DD358639BE5CB0 /* Pods_trnql_Interplay.framework */; };
+		424D18451C6E565800106B54 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D18441C6E565800106B54 /* SwiftyJSON.swift */; };
 		425C05CC1BFFA6E0003F5743 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C05CB1BFFA6E0003F5743 /* ViewController.swift */; };
 		426F959A1B82A6740075E7F3 /* DatasetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F95991B82A6740075E7F3 /* DatasetTableViewController.swift */; };
 		42F23E3A1C0145AB006B417C /* PersonMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F23E391C0145AB006B417C /* PersonMapAnnotation.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		375AAD9124DD358639BE5CB0 /* Pods_trnql_Interplay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trnql_Interplay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		424D18441C6E565800106B54 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		425C05CB1BFFA6E0003F5743 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		426F95991B82A6740075E7F3 /* DatasetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatasetTableViewController.swift; sourceTree = "<group>"; };
 		42F23E391C0145AB006B417C /* PersonMapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonMapAnnotation.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		42F8AC701B792FB5001E152C /* trnql Interplay */ = {
 			isa = PBXGroup;
 			children = (
+				424D18441C6E565800106B54 /* SwiftyJSON.swift */,
 				42F8AC731B792FB5001E152C /* AppDelegate.swift */,
 				425C05CB1BFFA6E0003F5743 /* ViewController.swift */,
 				42F23E391C0145AB006B417C /* PersonMapAnnotation.swift */,
@@ -243,6 +246,7 @@
 				42F23E3A1C0145AB006B417C /* PersonMapAnnotation.swift in Sources */,
 				425C05CC1BFFA6E0003F5743 /* ViewController.swift in Sources */,
 				426F959A1B82A6740075E7F3 /* DatasetTableViewController.swift in Sources */,
+				424D18451C6E565800106B54 /* SwiftyJSON.swift in Sources */,
 				42F8AC741B792FB5001E152C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
