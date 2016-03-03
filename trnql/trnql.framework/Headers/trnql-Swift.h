@@ -527,6 +527,9 @@ SWIFT_CLASS("_TtC5trnql10PlaceEntry")
 /// A list of reviews for this place.
 @property (nonatomic, readonly, copy) NSArray<Review *> * __nullable reviews;
 
+/// A list of types (as PlaceType values) that categorize the place.
+@property (nonatomic, readonly, copy) NSArray<NSString *> * __nullable types;
+
 /// The URL to open the place in Google Maps.
 @property (nonatomic, readonly, copy) NSString * __nullable googleMapsURL;
 
@@ -548,6 +551,401 @@ SWIFT_CLASS("_TtC5trnql10PlaceEntry")
 
 /// :nodoc:
 - (void)encodeWithCoder:(NSCoder * __nonnull)coder;
+@end
+
+
+
+/// The types of establishments that can be searched for and delivered to the smartPlacesChange(_: error:) delegate method.
+SWIFT_CLASS("_TtC5trnql9PlaceType")
+@interface PlaceType : NSObject
+
+/// ACCOUNTING
++ (NSString * __nonnull)ACCOUNTING;
+
+/// AIRPORT
++ (NSString * __nonnull)AIRPORT;
+
+/// AMUSEMENT_PARK
++ (NSString * __nonnull)AMUSEMENT_PARK;
+
+/// AQUARIUM
++ (NSString * __nonnull)AQUARIUM;
+
+/// ART_GALLERY
++ (NSString * __nonnull)ART_GALLERY;
+
+/// ATM
++ (NSString * __nonnull)ATM;
+
+/// BAKERY
++ (NSString * __nonnull)BAKERY;
+
+/// BANK
++ (NSString * __nonnull)BANK;
+
+/// BAR
++ (NSString * __nonnull)BAR;
+
+/// BEAUTY_SALON
++ (NSString * __nonnull)BEAUTY_SALON;
+
+/// BICYCLE_STORE
++ (NSString * __nonnull)BICYCLE_STORE;
+
+/// BOOK_STORE
++ (NSString * __nonnull)BOOK_STORE;
+
+/// BOWLING_ALLEY
++ (NSString * __nonnull)BOWLING_ALLEY;
+
+/// BUS_STATION
++ (NSString * __nonnull)BUS_STATION;
+
+/// CAFE
++ (NSString * __nonnull)CAFE;
+
+/// CAMPGROUND
++ (NSString * __nonnull)CAMPGROUND;
+
+/// CAR_DEALER
++ (NSString * __nonnull)CAR_DEALER;
+
+/// CAR_RENTAL
++ (NSString * __nonnull)CAR_RENTAL;
+
+/// CAR_REPAIR
++ (NSString * __nonnull)CAR_REPAIR;
+
+/// CAR_WASH
++ (NSString * __nonnull)CAR_WASH;
+
+/// CASINO
++ (NSString * __nonnull)CASINO;
+
+/// CEMETERY
++ (NSString * __nonnull)CEMETERY;
+
+/// CHURCH
++ (NSString * __nonnull)CHURCH;
+
+/// CITY_HALL
++ (NSString * __nonnull)CITY_HALL;
+
+/// CLOTHING_STORE
++ (NSString * __nonnull)CLOTHING_STORE;
+
+/// CONVENIENCE_STORE
++ (NSString * __nonnull)CONVENIENCE_STORE;
+
+/// COURTHOUSE
++ (NSString * __nonnull)COURTHOUSE;
+
+/// DENTIST
++ (NSString * __nonnull)DENTIST;
+
+/// DEPARTMENT_STORE
++ (NSString * __nonnull)DEPARTMENT_STORE;
+
+/// DOCTOR
++ (NSString * __nonnull)DOCTOR;
+
+/// ELECTRICIAN
++ (NSString * __nonnull)ELECTRICIAN;
+
+/// ELECTRONICS_STORE
++ (NSString * __nonnull)ELECTRONICS_STORE;
+
+/// EMBASSY
++ (NSString * __nonnull)EMBASSY;
+
+/// ESTABLISHMENT
++ (NSString * __nonnull)ESTABLISHMENT;
+
+/// FINANCE
++ (NSString * __nonnull)FINANCE;
+
+/// FIRE_STATION
++ (NSString * __nonnull)FIRE_STATION;
+
+/// FLORIST
++ (NSString * __nonnull)FLORIST;
+
+/// FOOD
++ (NSString * __nonnull)FOOD;
+
+/// FUNERAL_HOME
++ (NSString * __nonnull)FUNERAL_HOME;
+
+/// FURNITURE_STORE
++ (NSString * __nonnull)FURNITURE_STORE;
+
+/// GAS_STATION
++ (NSString * __nonnull)GAS_STATION;
+
+/// GENERAL_CONTRACTOR
++ (NSString * __nonnull)GENERAL_CONTRACTOR;
+
+/// GROCERY_OR_SUPERMARKET
++ (NSString * __nonnull)GROCERY_OR_SUPERMARKET;
+
+/// GYM
++ (NSString * __nonnull)GYM;
+
+/// HAIR_CARE
++ (NSString * __nonnull)HAIR_CARE;
+
+/// HARDWARE_STORE
++ (NSString * __nonnull)HARDWARE_STORE;
+
+/// HEALTH
++ (NSString * __nonnull)HEALTH;
+
+/// HINDU_TEMPLE
++ (NSString * __nonnull)HINDU_TEMPLE;
+
+/// HOME_GOODS_STORE
++ (NSString * __nonnull)HOME_GOODS_STORE;
+
+/// HOSPITAL
++ (NSString * __nonnull)HOSPITAL;
+
+/// INSURANCE_AGENCY
++ (NSString * __nonnull)INSURANCE_AGENCY;
+
+/// JEWELRY_STORE
++ (NSString * __nonnull)JEWELRY_STORE;
+
+/// LAUNDRY
++ (NSString * __nonnull)LAUNDRY;
+
+/// LAWYER
++ (NSString * __nonnull)LAWYER;
+
+/// LIBRARY
++ (NSString * __nonnull)LIBRARY;
+
+/// LIQUOR_STORE
++ (NSString * __nonnull)LIQUOR_STORE;
+
+/// LOCAL_GOVERNMENT_OFFICE
++ (NSString * __nonnull)LOCAL_GOVERNMENT_OFFICE;
+
+/// LOCKSMITH
++ (NSString * __nonnull)LOCKSMITH;
+
+/// LODGING
++ (NSString * __nonnull)LODGING;
+
+/// MEAL_DELIVERY
++ (NSString * __nonnull)MEAL_DELIVERY;
+
+/// MEAL_TAKEAWAY
++ (NSString * __nonnull)MEAL_TAKEAWAY;
+
+/// MOSQUE
++ (NSString * __nonnull)MOSQUE;
+
+/// MOVIE_RENTAL
++ (NSString * __nonnull)MOVIE_RENTAL;
+
+/// MOVIE_THEATER
++ (NSString * __nonnull)MOVIE_THEATER;
+
+/// MOVING_COMPANY
++ (NSString * __nonnull)MOVING_COMPANY;
+
+/// MUSEUM
++ (NSString * __nonnull)MUSEUM;
+
+/// NIGHT_CLUB
++ (NSString * __nonnull)NIGHT_CLUB;
+
+/// PAINTER
++ (NSString * __nonnull)PAINTER;
+
+/// PARK
++ (NSString * __nonnull)PARK;
+
+/// PARKING
++ (NSString * __nonnull)PARKING;
+
+/// PET_STORE
++ (NSString * __nonnull)PET_STORE;
+
+/// PHARMACY
++ (NSString * __nonnull)PHARMACY;
+
+/// PHYSIOTHERAPIST
++ (NSString * __nonnull)PHYSIOTHERAPIST;
+
+/// PLACE_OF_WORSHIP
++ (NSString * __nonnull)PLACE_OF_WORSHIP;
+
+/// PLUMBER
++ (NSString * __nonnull)PLUMBER;
+
+/// POLICE
++ (NSString * __nonnull)POLICE;
+
+/// POST_OFFICE
++ (NSString * __nonnull)POST_OFFICE;
+
+/// REAL_ESTATE_AGENCY
++ (NSString * __nonnull)REAL_ESTATE_AGENCY;
+
+/// RESTAURANT
++ (NSString * __nonnull)RESTAURANT;
+
+/// ROOFING_CONTRACTOR
++ (NSString * __nonnull)ROOFING_CONTRACTOR;
+
+/// RV_PARK
++ (NSString * __nonnull)RV_PARK;
+
+/// SCHOOL
++ (NSString * __nonnull)SCHOOL;
+
+/// SHOE_STORE
++ (NSString * __nonnull)SHOE_STORE;
+
+/// SHOPPING_MALL
++ (NSString * __nonnull)SHOPPING_MALL;
+
+/// SPA
++ (NSString * __nonnull)SPA;
+
+/// STADIUM
++ (NSString * __nonnull)STADIUM;
+
+/// STORAGE
++ (NSString * __nonnull)STORAGE;
+
+/// STORE
++ (NSString * __nonnull)STORE;
+
+/// SUBWAY_STATION
++ (NSString * __nonnull)SUBWAY_STATION;
+
+/// SYNAGOGUE
++ (NSString * __nonnull)SYNAGOGUE;
+
+/// TAXI_STAND
++ (NSString * __nonnull)TAXI_STAND;
+
+/// TRAIN_STATION
++ (NSString * __nonnull)TRAIN_STATION;
+
+/// TRAVEL_AGENCY
++ (NSString * __nonnull)TRAVEL_AGENCY;
+
+/// UNIVERSITY
++ (NSString * __nonnull)UNIVERSITY;
+
+/// VETERINARY_CARE
++ (NSString * __nonnull)VETERINARY_CARE;
+
+/// ZOO
++ (NSString * __nonnull)ZOO;
+
+/// ADMINISTRATIVE_AREA_LEVEL_1
++ (NSString * __nonnull)ADMINISTRATIVE_AREA_LEVEL_1;
+
+/// ADMINISTRATIVE_AREA_LEVEL_2
++ (NSString * __nonnull)ADMINISTRATIVE_AREA_LEVEL_2;
+
+/// ADMINISTRATIVE_AREA_LEVEL_3
++ (NSString * __nonnull)ADMINISTRATIVE_AREA_LEVEL_3;
+
+/// ADMINISTRATIVE_AREA_LEVEL_4
++ (NSString * __nonnull)ADMINISTRATIVE_AREA_LEVEL_4;
+
+/// ADMINISTRATIVE_AREA_LEVEL_5
++ (NSString * __nonnull)ADMINISTRATIVE_AREA_LEVEL_5;
+
+/// COLLOQUIAL_AREA
++ (NSString * __nonnull)COLLOQUIAL_AREA;
+
+/// COUNTRY
++ (NSString * __nonnull)COUNTRY;
+
+/// FLOOR
++ (NSString * __nonnull)FLOOR;
+
+/// GEOCODE
++ (NSString * __nonnull)GEOCODE;
+
+/// INTERSECTION
++ (NSString * __nonnull)INTERSECTION;
+
+/// LOCALITY
++ (NSString * __nonnull)LOCALITY;
+
+/// NATURAL_FEATURE
++ (NSString * __nonnull)NATURAL_FEATURE;
+
+/// NEIGHBORHOOD
++ (NSString * __nonnull)NEIGHBORHOOD;
+
+/// POLITICAL
++ (NSString * __nonnull)POLITICAL;
+
+/// POINT_OF_INTEREST
++ (NSString * __nonnull)POINT_OF_INTEREST;
+
+/// POST_BOX
++ (NSString * __nonnull)POST_BOX;
+
+/// POSTAL_CODE
++ (NSString * __nonnull)POSTAL_CODE;
+
+/// POSTAL_CODE_PREFIX
++ (NSString * __nonnull)POSTAL_CODE_PREFIX;
+
+/// POSTAL_CODE_SUFFIX
++ (NSString * __nonnull)POSTAL_CODE_SUFFIX;
+
+/// POSTAL_TOWN
++ (NSString * __nonnull)POSTAL_TOWN;
+
+/// PREMISE
++ (NSString * __nonnull)PREMISE;
+
+/// ROOM
++ (NSString * __nonnull)ROOM;
+
+/// ROUTE
++ (NSString * __nonnull)ROUTE;
+
+/// STREET_ADDRESS
++ (NSString * __nonnull)STREET_ADDRESS;
+
+/// STREET_NUMBER
++ (NSString * __nonnull)STREET_NUMBER;
+
+/// SUBLOCALITY
++ (NSString * __nonnull)SUBLOCALITY;
+
+/// SUBLOCALITY_LEVEL_4
++ (NSString * __nonnull)SUBLOCALITY_LEVEL_4;
+
+/// SUBLOCALITY_LEVEL_5
++ (NSString * __nonnull)SUBLOCALITY_LEVEL_5;
+
+/// SUBLOCALITY_LEVEL_3
++ (NSString * __nonnull)SUBLOCALITY_LEVEL_3;
+
+/// SUBLOCALITY_LEVEL_2
++ (NSString * __nonnull)SUBLOCALITY_LEVEL_2;
+
+/// SUBLOCALITY_LEVEL_1
++ (NSString * __nonnull)SUBLOCALITY_LEVEL_1;
+
+/// SUBPREMISE
++ (NSString * __nonnull)SUBPREMISE;
+
+/// TRANSIT_STATION
++ (NSString * __nonnull)TRANSIT_STATION;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -806,6 +1204,10 @@ SWIFT_CLASS("_TtC5trnql11SmartPlaces")
 /// A Boolean whether or not PlaceEntry objects should include photos (if available) of the respecive place.
 + (BOOL)includeImages;
 + (void)setIncludeImages:(BOOL)value;
+
+/// The types of places that should be searched for. See PlaceType for a list of possible values. Use nil to search for all types.
++ (NSArray<NSString *> * __nullable)types;
++ (void)setTypes:(NSArray<NSString *> * __nullable)newValue;
 
 /// A Boolean indidicating whether or not the SmartPlaces service is running.
 + (BOOL)isEnabled;

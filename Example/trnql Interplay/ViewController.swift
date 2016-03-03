@@ -107,7 +107,7 @@ class ViewController: UIViewController, TrnqlDelegate, MKMapViewDelegate {
         
         Trnql.addDelegate(self)
         SmartPlaces.includeImages = true
-        SmartPlaces.types = [.RESTAURANT, .GAS_STATION, .ATM, .GROCERY_OR_SUPERMARKET, .PARKING, .PARK]
+        SmartPlaces.types = [PlaceType.RESTAURANT, PlaceType.GAS_STATION, PlaceType.ATM, PlaceType.GROCERY_OR_SUPERMARKET, PlaceType.PARKING, PlaceType.PARK]
         Trnql.startAllServices() // Starts all services
         
         updateLocationBanner(UIImage(named: "earth")!)
@@ -955,7 +955,7 @@ class ViewController: UIViewController, TrnqlDelegate, MKMapViewDelegate {
         }
         
         if let tags = currentRestaurant?.types where tags.count > 0 {
-            dataset.append(tags.map { $0.rawValue }.joinWithSeparator(", "))
+            dataset.append(tags.joinWithSeparator(", "))
         }
         else {
             dataset.append("-")
@@ -1028,7 +1028,7 @@ class ViewController: UIViewController, TrnqlDelegate, MKMapViewDelegate {
         }
         
         if let tags = currentOtherPOI?.types where tags.count > 0 {
-            dataset.append(tags.map { $0.rawValue }.joinWithSeparator(", "))
+            dataset.append(tags.joinWithSeparator(", "))
         }
         else {
             dataset.append("-")
