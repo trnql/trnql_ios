@@ -410,7 +410,7 @@ class ViewController: UIViewController, TrnqlDelegate, MKMapViewDelegate {
                                     break
                                 }
                             }
-                            numberOfPhotosRequired--
+                            numberOfPhotosRequired -= 1
                         }
                         else {
                             restaurant = restaurants[Int(arc4random_uniform(UInt32(restaurants.count)))]
@@ -513,7 +513,7 @@ class ViewController: UIViewController, TrnqlDelegate, MKMapViewDelegate {
                                     break
                                 }
                             }
-                            numberOfPhotosRequired--
+                            numberOfPhotosRequired -= 1
                         }
                         else {
                             otherPOI = otherPOIs[Int(arc4random_uniform(UInt32(otherPOIs.count)))]

@@ -1,5 +1,5 @@
 PODS:
-  - trnql (1.8.3)
+  - trnql (1.9)
 
 DEPENDENCIES:
   - trnql (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  trnql: d6d27f43c3dd507a2d0d017b0dbbe9b07981e49f
+  trnql: c40dda1f4655b893658881025efbe81693963e3f
 
 PODFILE CHECKSUM: ad8322c17da1ffea69819a38ee920726a6353661
 
