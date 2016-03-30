@@ -1202,6 +1202,12 @@ SWIFT_CLASS("_TtC5trnql11SmartPeople")
 
 /// Stop the SmartPeople service.
 + (void)stop;
+
+/// Removes any PersonEntry from the given array of people that was located more than 7 days ago.
+///
+/// <ul><li>parameter: The array of people.</li></ul>
+/// \returns  The filtered array of people.
++ (NSArray<PersonEntry *> * _Nonnull)removeStalePersonEntriesFrom:(NSArray<PersonEntry *> * _Nonnull)people;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
