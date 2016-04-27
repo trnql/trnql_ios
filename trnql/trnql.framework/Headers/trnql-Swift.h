@@ -1287,12 +1287,7 @@ SWIFT_CLASS("_TtC5trnql5Trnql")
 
 /// REQUIRES iOS 9 OR GREATER
 ///
-/// Sets whether or not the application requires background execution.
-///
-/// By default (<code>requiresBackgroundExecution = false
-/// </code>), when the application enters background all services are paused. Services are then automatically resumed when the application enters foreground.
-///
-/// If the application needs continuous updates while in the background, set <code>requiresBackgroundExecution = true
+/// Sets whether or not the application requires background execution. By default this property is <code>true
 /// </code>.\Note 
 ///
 /// <code>SmartLocation

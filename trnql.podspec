@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
     s.name         = "trnql"
     s.platform     = :ios, "8.0"
-    s.version      = "1.9.1"
+    s.version      = "1.9.2"
     s.summary      = "Easily integrate 'contextual awareness' from sensors, phone data & cloud services into engaging applications"
     s.homepage     = "http://trnql.com/"
     s.license      = { :type => "Copyright (C) 2015 trnql, Inc.", :file => "LICENSE" }
